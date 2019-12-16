@@ -97,7 +97,7 @@ public class ConsoleUI implements UserInterface {
 
 	private void handleInput(String input) throws WrongFormatException {
 
-		Pattern pattern = Pattern.compile("([A-Z])([0-9]*)", Pattern.CASE_INSENSITIVE);
+		Pattern pattern = Pattern.compile("([A-Z])([0-9]+)", Pattern.CASE_INSENSITIVE);
 		Matcher matcher = pattern.matcher(input);
 		if (matcher.matches()) {
 
@@ -107,9 +107,7 @@ public class ConsoleUI implements UserInterface {
 
 			field.openTile(row, column, field.valueOfLastTile);
 
-		} else if (input.length() == 1 && input.charAt(0) == 'X') {
-			System.out.println("You choosed Exit");
-			System.exit(0);
+
 		} else {
 			throw new WrongFormatException("Wrong input " + input);
 		}
