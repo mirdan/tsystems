@@ -41,7 +41,6 @@ public class ConsoleUI implements UserInterface {
 		this.field = field;
 		do {
 			update();
-
 			if (field.getState() == GameState.SOLVED) {
 				System.out.println("Congrat. ");
 				System.exit(0);
@@ -49,9 +48,7 @@ public class ConsoleUI implements UserInterface {
 				System.out.println("It is DRAW. ");
 				System.exit(0);
 			}
-
 			processInput();
-
 		} while (true);
 	}
 
@@ -70,10 +67,8 @@ public class ConsoleUI implements UserInterface {
 			for (int column = 0; column < field.getColumnCount(); column++) {
 				Tile tile = field.getTile(row, column);
 				if (tile.getState() == State.X) {
-
 					System.out.printf("%2c ", 'X');
 				}
-
 				else if (tile.getState() == State.O) {
 					System.out.printf("%2c ", 'O');
 				} else if (tile.getState() == State.CLOSED) {
@@ -82,8 +77,7 @@ public class ConsoleUI implements UserInterface {
 			}
 		}
 		System.out.println("");
-		System.out.println("Please enter your selection <X>Exit, <B4>OPEN: ");
-
+		System.out.println("Please enter your selection: napr. B4 ");
 	}
 
 	/**
@@ -111,7 +105,7 @@ public class ConsoleUI implements UserInterface {
 			int row = rowAsChar - 'A';
 			int column = Integer.parseInt(matcher.group(2));
 
-			field.openTile(row, column, field.nextValueOfTile);
+			field.openTile(row, column, field.valueOfLastTile);
 
 		} else if (input.length() == 1 && input.charAt(0) == 'X') {
 			System.out.println("You choosed Exit");
