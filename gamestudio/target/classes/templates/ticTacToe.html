@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Tic Tac Toe</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/CSS/main.css" media="screen" />
+</head>
+<body>
+
+	<div th:replace="/header :: header">...</div>
+	<main>
+		<h1>Tic Tac Toe</h1>
+
+		<a href="/ticTacToe">New Game</a> <br />
+
+		<div th:utext="${@ticTacToeController.htmlField}" />
+
+		<div th:if="${@ticTacToeController.solved}">you win!</div>
+
+		<h3>Rating</h3>
+
+		<div th:if="${@mainController.logged}">
+			<div th:replace="addRating :: addRating ('/ticTacToe/rating')" />
+		</div>
+
+		<span>average rating is: </span> <span
+			th:text="${@ticTacToeController.ratings}" />
+
+		<div th:if="${@mainController.logged}">
+			<div th:replace="addComment :: setComment ('/ticTacToe/comment')" />
+		</div>
+		<div
+			th:replace="comments :: comments (${@ticTacToeController.comments})" />
+	</main>
+	<div th:replace="footer :: footer" />
+</body>
+</html>

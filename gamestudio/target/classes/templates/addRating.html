@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>...
+</head>
+<body>
+
+	<div class="addRating" th:fragment="addRating (rating)">
+		<h3>Add Rating</h3>
+		
+	
+	<form th:action="${rating}">
+		
+	 	 <input type="radio" name="value" value="0" /> hroza</br>
+		 <input	type="radio" name="value" value="25" /> pod priemer</br>
+		 <input type="radio" name="value" value="50" /> priemer</br>
+	     <input type="radio" name="value" value="75" /> dobra</br>
+	     <input type="radio" name="value" value="100" /> vynikajuca</br>
+	     <input type="submit" value="Add rating" />
+	     
+		</form>
+		
+ <!-- 
+	<a href=th:"${rating}/value=100">☆</a>
+	<a href=th:"${rating}/value=75">☆</a>
+	<a href=th:"${rating}/value=50">☆</a>
+	<a href=th:"${rating}/value=25">☆</a>
+	<a href=th:"${rating}/value=0">☆</a>
+ -->
+		
+	</div>
+</body>
+</html>
+
+
+
+<!-- 	
+<h3>Add Rating</h3>
+	<form action="/puzzle/rating">
+		<p>Rate this game</p>
+		<input type="radio" name="value" value="0" /> hroza</br> <input
+		type="radio" name="value" value="25" /> pod priemer</br> <input
+		type="radio" name="value" value="50" /> priemer</br> <input type="radio"
+		name="value" value="75" /> dobra</br> <input type="radio" name="value"
+		value="100" /> vynikajuca</br> <input type="submit" value="Add rating" />
+	</form> -->

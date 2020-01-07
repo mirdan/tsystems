@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Puzzle</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/CSS/main.css" media="screen" />
+</head>
+<body>
+	<div th:replace="/header :: header">...</div>
+	
+	<main>
+	<h1>Puzzle</h1>
+	<a href="/puzzle">New Game</a>
+	<br />
+	<div th:if="${@puzzleController.solved}">you win!</div>
+	<div th:if="${not @puzzleController.solved}">
+		<div th:utext="${@puzzleController.htmlField}"/>
+	</div>
+	<img src="/puzzle/puzzle.jpg" />
+	<div th:if="${@mainController.logged}">
+		<div th:replace="addRating :: addRating ('/puzzle/rating')" />
+	</div>
+	<div th:replace="rating :: rating (${@puzzleController.ratings})" />
+	<div th:if="${@mainController.logged}">
+		<div th:replace="addComment :: setComment ('/puzzle/comment')" />
+	</div>
+	<div th:replace="comments :: comments (${@puzzleController.comments})" />
+	<div th:replace="scores :: scores (${@puzzleController.scores})" />	
+	
+	</main>
+	<div th:replace="footer :: footer">...</div>
+</body>
+</html>
+
+
+
+<!-- <div th:text="${@puzzleController.message}" /> -->

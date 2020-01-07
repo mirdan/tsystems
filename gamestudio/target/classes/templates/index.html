@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Gamestudio</title>
+
+	<link rel="stylesheet" href="/CSS/main.css" media="screen" />
+
+</head>
+<body>
+
+	<div th:replace="/header :: header">...</div>
+
+<main>
+	<h1>Welcome to Game studio!</h1>
+
+	<a href="/puzzle"><img src="/puzzle/image.jpg" alt="Puzzle"></a>
+
+	<a href="/minesweeper"><img src="/mines/image.png" alt="Minesweeper"></a>
+
+	<a href="/ticTacToe"><img src="/tictactoe/image.png" alt="Tic Tac Toe"></a>
+
+	<div th:if="${not @mainController.logged}">
+		<form action="/signin">
+			New Login: <input type="text" name="name" /><span>At least 3
+				char</span> <span th:if="${not @mainController.validName}"> <span
+				th:text="${@mainController.message}"></span>
+			</span> <br /> Password: <input type="password" name="passwd" /><span>At
+				least 3 char</span><span th:if="${not @mainController.validPasswd}">
+				<span th:text="${@mainController.message}" />
+			</span>  <input type="submit" value="signin" />
+		</form>
+		<form action="/login">
+			Login: <input type="text" name="name" /> Password: <input
+				type="password" name="passwd" /> <input type="submit" value="Login" />
+		</form>
+	</div>
+
+</main>
+	<div th:replace="footer :: footer" />
+</body>
+</html>
