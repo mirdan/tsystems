@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<header th:fragment="header">
+		<div th:if="${not @mainController.logged}">
+			you are not login please <a href="/">log in</a>
+		</div>
+		<div th:if="${@mainController.logged}">
+			You are logged as <span
+				th:text="${@mainController.loggedPlayer.name}   " /> <a
+				href="/logout">logout</a><br />
+		</div>
+		
+	</header>
+</body>
+</html>

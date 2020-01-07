@@ -1,0 +1,126 @@
+body > header > div {
+	float: right;
+    margin: 10px;
+}
+
+
+body > main{
+	clear:both;
+}
+
+
+
+body > main > div{
+	margin:10px;
+}
+
+
+body > main > div > form{
+	margin:15px;
+	display: inline-grid;
+	background-color: bisque;
+}
+
+body > main > div > form > input{
+	
+	margin:7px;
+}
+
+
+body > main > a > img{
+	margin: 20px;
+}
+
+
+
+.addRating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  float: left;
+  margin-bottom: 20px;
+}
+.addRating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.addRating > span:hover:before,
+.addRating	 > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
+.rating{
+	clear:both;
+	margin:10px;
+}
+
+
+.scores{
+	background-color: bisque;
+	width: fit-content;
+}
+.scores h3{
+	text-align: center;
+}
+.scores > ul{
+	list-style-type: none;
+}
+.scores li > span{
+	margin:15px;
+}
+.scores li > span:nth-child(1){
+	font-size: x-large;
+}
+
+.addComment{
+	background-color: bisque;
+	width: fit-content;
+}
+.addComment h3{
+	text-align: center;
+}
+.addComment > form > textarea{
+	    display: block;
+	    width: 350px;
+    	height: 100px;
+}
+.addComment > form > input[type=submit]{
+	margin: 10px;
+}
+
+.comments{
+	background-color: bisque;
+	width: fit-content;
+}
+.comments h3{
+	text-align: center;
+}
+.comments >ul{
+	list-style-type: none;
+}
+.comments li{
+	
+	margin:15px;
+}
+
+.comments li > span:nth-child(2){
+	display: block;
+	background-color: chocolate;
+}
+
+
+
+body > footer{
+	clear:both;
+}
+
+
+body > footer > span:nth-child(1) {
+	float:left;
+	margin:10px;
+}
+body > footer > span:nth-child(2) {
+	float:right;
+	margin:10px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Minesweeper</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/CSS/main.css" media="screen" />
+</head>
+<body>
+	<div th:replace="/header :: header">...</div>
+	
+	<main>
+	<h1>Minesweeper</h1>
+	<a href="/minesweeper">New Game</a>
+	<br />
+	<a href="/minesweeper/change">open/mark</a>
+	<br />
+	<span th:if="${@minesweeperController.marking}">MARKING</span>
+	<span th:if="${not @minesweeperController.marking}">OPENING</span>
+	<div th:if="${@minesweeperController.solved}">you win!</div>
+	<div th:utext="${@minesweeperController.htmlField}" />
+	<div th:if="${@mainController.logged}">
+		<div th:replace="addRating :: addRating ('/minesweeper/rating')" />
+	</div>
+	<div th:replace="rating :: rating (${@minesweeperController.ratings})" />
+	<div th:if="${@mainController.logged}">
+		<div th:replace="addComment :: setComment ('/minesweeper/comment')" />
+	</div>
+	<div th:replace="comments :: comments (${@minesweeperController.comments})" />
+	<div th:replace="scores :: scores (${@minesweeperController.scores})" />	
+	
+	</main>
+	<div th:replace="footer :: footer"/>
+</body>
+</html>
+
+
+<!-- <div th:text="${@minesweeperController.message}"/> -->

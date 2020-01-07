@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>...
+</head>
+<body>
+	<div class="addComment" th:fragment="setComment (comment)">
+	<h3>Add Comment</h3>
+	<form th:action="${comment}">
+			<textarea name="content"></textarea>
+			<input type="submit" value="Add comment" />
+		</form>
+	</div>
+</body>
+</html>
+
+
+<!-- 	<div th:if="${@mainController.logged}">
+		<form action="/puzzle/comment">
+			<textarea name="content"></textarea>
+			<input type="submit" value="Add comment" />
+		</form>
+	</div> -->

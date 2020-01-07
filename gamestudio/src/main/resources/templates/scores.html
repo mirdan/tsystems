@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>...
+</head>
+<body>
+	<div class="scores" th:fragment="scores (scores)">
+		<h3>Scores</h3>
+		<ul>
+			<li th:each="score : ${scores}"><span th:text="${score.value}" /><span th:text="${score.username}" /></li>
+		</ul>
+	</div>
+</body>
+</html>
+
+
+
+<!--
+<h3>Scores</h3>
+
+ <ol>
+		<li th:each="score : ${@puzzleController.scores}">
+		<span th:text="${score.username}" /> <span th:text="${score.game}" />
+		<span th:text="${score.value}" /></li>
+	</ol> -->

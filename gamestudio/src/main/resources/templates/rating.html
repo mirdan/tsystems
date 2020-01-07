@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>...
+</head>
+<body>
+	<div class="rating" th:fragment="rating (rating)">
+		<h3>Rating</h3>
+		<span>average rating is: </span>
+	<span th:text="${rating}" />
+	</div>
+</body>
+</html>
+
+
+
+<!-- 	<span>average rating is: </span> -->
+<!-- 	<span th:text="${@puzzleController.ratings}" /> -->
